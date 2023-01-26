@@ -14,6 +14,8 @@ namespace Library.classes.GUI
 
         void inputOutOfBounce();
 
+        void inputOutOfBounce(string message);
+
         void inputAdded();
 
         void offerAdded(Boolean added);
