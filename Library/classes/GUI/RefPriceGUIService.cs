@@ -28,7 +28,7 @@ namespace Library.classes.GUI
 
         public void inputAdded()
         {
-            throw new NotImplementedException();
+            System.Console.WriteLine("Eingabe erfolgreich\n");
         }
 
         public void inputOutOfBounce()
