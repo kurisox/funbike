@@ -20,7 +20,7 @@ namespace Library.classes.DataInput
                         throw new InvalidNumberException("Eingabe kleiner als 0");
                     }
                 }catch(InvalidNumberException ex){
-                }catch(FormatException ex){
+                }catch(FormatException){
                 }
             }while(!inputFinshed);
 
