@@ -26,7 +26,26 @@ namespace Library.classes.GUI
 
         public int offerMenu(int inputStep)
         {
-            throw new NotImplementedException();
+            int returnValue = 0;
+            switch(inputStep){
+                case 1:
+                    System.Console.WriteLine("Eingabe Listeneinkaufspreis");
+                    returnValue = 1;
+                    break;
+                case 2:
+                    System.Console.WriteLine("Eingabe Lieferrabatt");    
+                    returnValue =2;
+                    break;
+                case 3:
+                    returnValue = 3;
+                    System.Console.WriteLine("Eingabe Lieferskonto");    
+                    break;
+                case 4:
+                    returnValue = 4;
+                    System.Console.WriteLine("Eingabe Bezugskosten");    
+                    break;
+            }
+            return returnValue;
         }
 
         public void printMainMenu()
