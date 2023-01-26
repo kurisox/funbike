@@ -19,7 +19,7 @@ namespace Library.classes.Offer
 
         public Dictionary<int, OfferSchema> getAllOffers()
         {
-            throw new NotImplementedException();
+            return this.offers;
         }
 
         public List<OfferSchema> getBestOffers()
