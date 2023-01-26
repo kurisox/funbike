@@ -12,5 +12,9 @@ namespace Library.classes.Calculation
         private double calcDiscountsInEuro(double price, double discount){
             return price * (discount / 100);
         }
+
+        private double calcWithFixedCosts(double price, double costs){
+            return price + costs;
+        }
     }
 }
