@@ -19,6 +19,7 @@ namespace Library.classes.DataInput
                     if(fixedValue < 0){
                         throw new InvalidNumberException("Eingabe kleiner als 0");
                     }
+                    inputFinshed = true;
                 }catch(InvalidNumberException ex){
                 }catch(FormatException){
                 }
