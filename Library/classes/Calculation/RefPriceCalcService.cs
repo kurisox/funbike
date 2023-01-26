@@ -8,5 +8,9 @@ namespace Library.classes.Calculation
         {
             throw new NotImplementedException();
         }
+
+        private double calcDiscountsInEuro(double price, double discount){
+            return price * (discount / 100);
+        }
     }
 }
