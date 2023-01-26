@@ -105,7 +105,7 @@ namespace Library.classes.GUI
 
         public void wrongFormat()
         {
-            throw new NotImplementedException();
+            System.Console.WriteLine("Ungültige Eingabe\n");
         }
     }
 }
