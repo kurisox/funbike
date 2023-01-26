@@ -19,6 +19,11 @@ namespace Library.classes.GUI
             throw new NotImplementedException();
         }
 
+        public void inputOutOfBounce(string message)
+        {
+            System.Console.WriteLine(message + "\n");
+        }
+
         public void offerAdded(bool added)
         {
             if(added){
