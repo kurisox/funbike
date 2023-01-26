@@ -27,5 +27,25 @@ namespace Library.classes.DataInput
 
             return fixedValue;
         }
+
+        private double addPercentValue(int step){
+            double percentValue = 0;
+            Boolean inputFinished = false;
+            do{
+                try{
+                    percentValue = Convert.ToDouble(System.Console.ReadLine());
+                    if(percentValue < 0){
+                        throw new InvalidNumberException("Eingabe kleiner als 0");
+                    }
+                    inputFinished = true;
+                }catch(IndexOutOfRangeException ex){
+                    
+                }catch(FormatException){
+                    
+                }
+            }while(!inputFinished);
+            return percentValue;
+        
+        }
     }
 }
