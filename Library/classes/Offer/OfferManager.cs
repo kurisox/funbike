@@ -1,12 +1,12 @@
 namespace Library.classes.Offer
 {
-    public class RefPriceOfferManager : IOfferManager
+    public class OfferManager : IOfferManager
     {
         private Dictionary<Int32, OfferSchema> offers;
         private List<OfferSchema> bestOffers;
         private int listSize = 5;
 
-        public RefPriceOfferManager(){
+        public OfferManager(){
             this.offers = new Dictionary<int, OfferSchema>();
             this.bestOffers = new List<OfferSchema>();
         }

@@ -5,12 +5,8 @@ using Library.classes.Offer.Offer_Schema;
 
 namespace Library.classes.DataInput
 {
-    public class RefPriceInputService : IDataInputService
+    public class DataInputService : IDataInputService
     {
-        IGUIService iGUIService;
-        public RefPriceInputService(IGUIService iGUIService){
-            this.iGUIService = iGUIService;
-        }
         public OfferSchema dataInput()
         {
             return OfferFactory.createOffer(addFixedValue(1), addPercentValue(2), addPercentValue(3), addFixedValue(4));
@@ -21,17 +17,21 @@ namespace Library.classes.DataInput
             Boolean inputFinshed = false;
             do{
                 try{
-                    this.iGUIService.offerMenu(step);
+                    if(step == 1){
+                        System.Console.WriteLine("Eingabe Listeneinkaufspreis");
+                    }else{
+                        System.Console.WriteLine("Eingabe Bezugskosten"); 
+                    }
                     fixedValue = Convert.ToDouble(System.Console.ReadLine());
                     if(fixedValue < 0){
                         throw new InvalidNumberException("Eingabe kleiner als 0");
                     }
                     inputFinshed = true;
-                    this.iGUIService.inputAdded();
+                    System.Console.WriteLine("Eingabe erfolgreich\n");
                 }catch(InvalidNumberException ex){
-                    this.iGUIService.inputOutOfBounce(ex.Message);
+                    System.Console.WriteLine(ex.Message + "\n");
                 }catch(FormatException){
-                    this.iGUIService.wrongFormat();
+                    System.Console.WriteLine("Ungültige Eingabe\n");
                 }
             }while(!inputFinshed);
 
@@ -43,17 +43,21 @@ namespace Library.classes.DataInput
             Boolean inputFinished = false;
             do{
                 try{
-                    this.iGUIService.offerMenu(step);
+                    if(step == 2){
+                        System.Console.WriteLine("Eingabe Lieferrabatt");   
+                    }else{
+                        System.Console.WriteLine("Eingabe Lieferskonto");
+                    }
                     percentValue = Convert.ToDouble(System.Console.ReadLine());
                     if(percentValue < 0){
                         throw new InvalidNumberException("Eingabe kleiner als 0");
                     }
                     inputFinished = true;
-                    this.iGUIService.inputAdded();
+                    System.Console.WriteLine("Eingabe erfolgreich\n");
                 }catch(IndexOutOfRangeException ex){
-                    this.iGUIService.inputOutOfBounce(ex.Message);
+                    System.Console.WriteLine(ex.Message + "\n");
                 }catch(FormatException){
-                    this.iGUIService.wrongFormat();
+                    System.Console.WriteLine("Ungültige Eingabe\n");
                 }
             }while(!inputFinished);
             return percentValue;

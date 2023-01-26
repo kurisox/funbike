@@ -3,7 +3,7 @@ using Library.classes.Offer;
 
 namespace Library.classes.GUI
 {
-    public class RefPriceGUIService : IGUIService
+    public class GUIService : IGUIService
     {
         public int choiceMainMenu()
         {

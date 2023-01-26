@@ -2,7 +2,7 @@ using Library.classes.Offer;
 
 namespace Library.classes.Calculation
 {
-    public class RefPriceCalcService : ICalculationService
+    public class CalculationService : ICalculationService
     {
         public OfferSchema calcOffer(OfferSchema offer)
         {
