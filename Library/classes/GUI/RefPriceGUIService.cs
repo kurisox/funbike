@@ -110,7 +110,7 @@ namespace Library.classes.GUI
                 {
                     System.Console.WriteLine("  Angebot ID: " + item.Value.offerID);
                     System.Console.WriteLine("  Listeneinkaufspreis: " + item.Value.listPrice + "€");
-                    System.Console.WriteLine("- Lieferrabatt: " + item.Value.deliveryDiscountInEuro + "% " + item.Value.deliveryDiscountInEuro + "€");
+                    System.Console.WriteLine("- Lieferrabatt: " + item.Value.deliveryDiscount + "% " + item.Value.deliveryDiscountInEuro + "€");
                     System.Console.WriteLine("= Zieleinkaufspreis: " + item.Value.targetPurchasePrice + "€");
                     System.Console.WriteLine("- Lieferskonto: " + item.Value.deliverySkonto + "% " + item.Value.deliverySkontoInEuro + "€");
                     System.Console.WriteLine("= Bareinkaufspreis: " + item.Value.cashPurchasePrice + "€");
