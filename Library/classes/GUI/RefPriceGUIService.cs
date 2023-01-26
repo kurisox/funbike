@@ -1,3 +1,4 @@
+using Library.classes.Exceptions;
 using Library.classes.Offer;
 
 namespace Library.classes.GUI
@@ -6,7 +7,23 @@ namespace Library.classes.GUI
     {
         public int choiceMainMenu()
         {
-            throw new NotImplementedException();
+            try{
+                return inputChoice();
+            }catch(System.FormatException){
+                System.Console.WriteLine("Ungültige Eingabe\n");
+                return -1;
+            }catch(InvalidNumberException ex){
+                System.Console.WriteLine(ex.Message);
+                return -1;
+            }
+        }
+
+        private int inputChoice(){
+            int menuChoice = Convert.ToInt32(System.Console.ReadLine());
+            if(menuChoice > 4 || menuChoice < 1){
+                throw new IndexOutOfRangeException("Auswahlmöglichkeit nicht vorhanden\n");
+            }
+            return menuChoice;
         }
 
         public void inputAdded()
