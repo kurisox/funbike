@@ -21,7 +21,11 @@ namespace Library.classes.GUI
 
         public void offerAdded(bool added)
         {
-            throw new NotImplementedException();
+            if(added){
+                System.Console.WriteLine("Angebot erfolgreich hinzugefügt\n");
+            }else{
+                System.Console.WriteLine("Angebot wurde nicht hinzugefügt\n");
+            }
         }
 
         public int offerMenu(int inputStep)
