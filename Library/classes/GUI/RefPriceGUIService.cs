@@ -31,7 +31,10 @@ namespace Library.classes.GUI
 
         public void printMainMenu()
         {
-            throw new NotImplementedException();
+            System.Console.WriteLine("[1] Angebot hinzufügen \n" +
+            "[2] Angebote anzeigen\n" +
+            "[3] Beste Angebote anzeigen\n" +
+            "[4] Programm beenden\n");
         }
 
         public void showBestOffers(List<OfferSchema> offers)
