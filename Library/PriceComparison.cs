@@ -23,7 +23,31 @@ namespace Library
         }
         public void run()
         {
-            throw new NotImplementedException();
+            do{
+                this.gUIService.printMainMenu();
+                switch(this.gUIService.choiceMainMenu()){
+                    case 1:
+                        Boolean added = false;
+                        if(this.offerManager.getAllOffers().Count < offerManager.getListSize()){
+                            OfferSchema newOffer = this.dataInputService.dataInput();
+                            newOffer = this.calculationService.calcOffer(newOffer);
+                            this.offerManager.addOffer(newOffer);
+                            added = true;
+                        }
+                        
+                        this.gUIService.offerAdded(added);
+                        break;
+                    case 2:
+                        this.gUIService.showOffers(this.offerManager.getAllOffers());    
+                        break;
+                    case 3:
+                        this.gUIService.showBestOffers(this.offerManager.getBestOffers());
+                        break;    
+                    case 4:
+                        this.endProgram = true;
+                        break;
+                }
+            }while(this.endProgram != true);
         }
     }
 }
