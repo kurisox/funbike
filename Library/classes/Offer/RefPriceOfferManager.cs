@@ -24,7 +24,24 @@ namespace Library.classes.Offer
 
         public List<OfferSchema> getBestOffers()
         {
-            throw new NotImplementedException();
+            this.bestOffers.Clear();
+            foreach (KeyValuePair<Int32, OfferSchema> item in this.offers)
+            {
+                if(this.bestOffers.Count == 0){
+                    this.bestOffers.Add(item.Value);
+                }else{
+                    if(this.bestOffers[0].referencePrice == item.Value.referencePrice){
+                    this.bestOffers.Add(item.Value);
+                    }
+                }
+
+                if(this.bestOffers[0].referencePrice > item.Value.referencePrice){
+                    this.bestOffers.Clear();
+                    this.bestOffers.Add(item.Value);
+                }
+
+            }
+            return this.bestOffers;
         }
 
         public int getListSize()
