@@ -46,7 +46,7 @@ namespace Library.classes.Offer
 
         public int getListSize()
         {
-            throw new NotImplementedException();
+            return this.listSize;
         }
     }
 }
