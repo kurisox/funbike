@@ -18,7 +18,7 @@ namespace Library.classes.Offer
             this.offerID = offerID;
             this.listPrice = listPrice;
             this.deliveryDiscount = deliveryDiscount;
-            this.deliverySkonto = deliveryDiscountInEuro;
+            this.deliverySkonto = deliverySkonto;
             this.referenceCosts = referenceCosts;
         }
     }
