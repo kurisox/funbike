@@ -21,6 +21,7 @@ namespace Library.classes.DataInput
             Boolean inputFinshed = false;
             do{
                 try{
+                    this.iGUIService.offerMenu(step);
                     fixedValue = Convert.ToDouble(System.Console.ReadLine());
                     if(fixedValue < 0){
                         throw new InvalidNumberException("Eingabe kleiner als 0");
@@ -42,6 +43,7 @@ namespace Library.classes.DataInput
             Boolean inputFinished = false;
             do{
                 try{
+                    this.iGUIService.offerMenu(step);
                     percentValue = Convert.ToDouble(System.Console.ReadLine());
                     if(percentValue < 0){
                         throw new InvalidNumberException("Eingabe kleiner als 0");
