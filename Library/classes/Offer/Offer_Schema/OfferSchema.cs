@@ -1,6 +1,6 @@
 namespace Library.classes.Offer
 {
-    public class Offer
+    public class OfferSchema
     {
         public int offerID  {get; set; }
         public double listPrice { get; set; }
