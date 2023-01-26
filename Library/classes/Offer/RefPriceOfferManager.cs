@@ -13,7 +13,8 @@ namespace Library.classes.Offer
 
         public OfferSchema addOffer(OfferSchema offer)
         {
-            throw new NotImplementedException();
+            this.offers.Add(offer.offerID, offer);
+            return offer;
         }
 
         public Dictionary<int, OfferSchema> getAllOffers()
