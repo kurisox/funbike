@@ -1,5 +1,6 @@
 using Library.classes.Exceptions;
 using Library.classes.Offer;
+using Library.classes.Offer.Offer_Schema;
 
 namespace Library.classes.DataInput
 {
@@ -7,7 +8,7 @@ namespace Library.classes.DataInput
     {
         public OfferSchema dataInput()
         {
-            throw new NotImplementedException();
+            return OfferFactory.createOffer(addFixedValue(1), addPercentValue(2), addPercentValue(3), addFixedValue(4));
         }
 
         private double addFixedValue(int step){
