@@ -12,5 +12,14 @@ namespace Library.classes.Offer
         public double cashPurchasePrice { get; set; }
         public double referenceCosts { get; set; }
         public double referencePrice { get; set; }
+
+        public OfferSchema(int offerID, double listPrice, double deliveryDiscount, double deliverySkonto, double referenceCosts)
+        {
+            this.offerID = offerID;
+            this.listPrice = listPrice;
+            this.deliveryDiscount = deliveryDiscount;
+            this.deliverySkonto = deliveryDiscountInEuro;
+            this.referenceCosts = referenceCosts;
+        }
     }
 }
