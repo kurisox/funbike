@@ -2,10 +2,9 @@ namespace Library.classes.Offer.Offer_Schema
 {
     public class OfferFactory
     {
-        private static Random random;
+        private static readonly Random random = new Random();
 
         private OfferFactory(){
-            random = new Random();
         }
 
         public static OfferSchema createOffer(double listPrice, double deliveryDiscount, double deliverySkonto, double referenceCosts){
