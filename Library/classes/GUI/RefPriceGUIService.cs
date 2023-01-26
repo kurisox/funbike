@@ -44,7 +44,21 @@ namespace Library.classes.GUI
 
         public void showOffers(Dictionary<int, OfferSchema> offers)
         {
-            throw new NotImplementedException();
+            if(offers.Count == 0){
+               System.Console.WriteLine("Keine Angebote vorhanden\n"); 
+            }else{
+                foreach (KeyValuePair<Int32, OfferSchema> item in offers)
+                {
+                    System.Console.WriteLine("  Angebot ID: " + item.Value.offerID);
+                    System.Console.WriteLine("  Listeneinkaufspreis: " + item.Value.listPrice + "€");
+                    System.Console.WriteLine("- Lieferrabatt: " + item.Value.deliveryDiscountInEuro + "% " + item.Value.deliveryDiscountInEuro + "€");
+                    System.Console.WriteLine("= Zieleinkaufspreis: " + item.Value.targetPurchasePrice + "€");
+                    System.Console.WriteLine("- Lieferskonto: " + item.Value.deliverySkonto + "% " + item.Value.deliverySkontoInEuro + "€");
+                    System.Console.WriteLine("= Bareinkaufspreis: " + item.Value.cashPurchasePrice + "€");
+                    System.Console.WriteLine("+ Bezugskosten: " + item.Value.referenceCosts + "€");
+                    System.Console.WriteLine("= Bezugspreis: " + item.Value.referencePrice + "€\n");
+                }
+            }
         }
 
         public void wrongFormat()
