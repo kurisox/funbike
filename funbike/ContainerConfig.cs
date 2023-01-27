@@ -1,6 +1,5 @@
 using Library;
 using Autofac;
-using System.Reflection;
 using Library.classes.Calculation;
 using Library.classes.Offer;
 using Library.classes.GUI;
