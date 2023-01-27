@@ -9,10 +9,7 @@ namespace funbike
 {
     public class Program
     {
-        static void Main(string[] args) {
-            /*IPriceComparison priceComparison = new PriceComparison(new OfferManager(), new DataInputService(), new CalculationService(), new GUIService());
-            priceComparison.run();*/
-            
+        static void Main(string[] args) {        
             var container = ContainerConfig.Configure();
 
             using (var scope = container.BeginLifetimeScope()){
