@@ -8,7 +8,7 @@ using Library.classes.DataInput;
 
 namespace funbike
 {
-    public class ConfigContainer
+    public class ContainerConfig
     {
         public static IContainer Configure(){
             var builder = new ContainerBuilder();
