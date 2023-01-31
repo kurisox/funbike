@@ -1,9 +1,4 @@
-﻿using Library;
-using Library.classes.DataInput;
-using Library.classes.Offer;
-using Library.classes.Calculation;
-using Library.classes.GUI;
-using Autofac;
+﻿using Autofac;
 
 namespace funbike
 {
