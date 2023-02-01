@@ -3,18 +3,19 @@ namespace Library.classes.Offer
     public class SimpleOfferManager : IOfferManager
     {
 
-        private Dictionary<Int32, OfferSchema> offers;
+        private List<OfferSchema> offers;
         private List<OfferSchema> bestOffers;
 
         public SimpleOfferManager()
         {
-            this.offers = new Dictionary<int, OfferSchema>();
+            this.offers = new List<OfferSchema>();
             this.bestOffers = new List<OfferSchema>();
         }
 
         public OfferSchema addOffer(OfferSchema offer)
         {
-            throw new NotImplementedException();
+            this.offers.Add(offer);
+            return offer;
         }
 
         public Dictionary<int, OfferSchema> getAllOffers()
@@ -22,9 +23,14 @@ namespace Library.classes.Offer
             throw new NotImplementedException();
         }
 
+        public List<OfferSchema> getAllOffersAsList()
+        {
+            return this.offers;
+        }
+
         public List<OfferSchema> getBestOffers()
         {
-            throw new NotImplementedException();
+            return this.bestOffers;
         }
 
         public int getListSize()
