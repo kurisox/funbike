@@ -22,6 +22,11 @@ namespace Library.classes.Offer
             return this.offers;
         }
 
+        public List<OfferSchema> getAllOffersAsList()
+        {
+            throw new NotImplementedException();
+        }
+
         public List<OfferSchema> getBestOffers()
         {
             this.bestOffers.Clear();
