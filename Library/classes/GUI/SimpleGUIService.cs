@@ -42,7 +42,7 @@ namespace Library.classes.GUI
         public void showBestOffers(List<OfferSchema> offers)
         {
             if(offers.Count == 0){
-                System.Console.WriteLine("Beide Angebot haben den selben Bezugspreis");
+                System.Console.WriteLine("Beide Angebot haben den selben Bezugspreis\n");
             }else{
                 System.Console.WriteLine("Günstigstes Angebot");
                 System.Console.WriteLine("Offer ID:" + offers[0].offerID);
