@@ -46,7 +46,7 @@ namespace Library.classes.GUI
             }else{
                 System.Console.WriteLine("Günstigstes Angebot");
                 System.Console.WriteLine("Offer ID:" + offers[0].offerID);
-                System.Console.WriteLine("Bezugspreis:" + offers[0].referencePrice);
+                System.Console.WriteLine("Bezugspreis:" + offers[0].referencePrice + "€\n");
             }
         }
 
