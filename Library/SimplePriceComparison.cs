@@ -23,7 +23,29 @@ namespace Library
 
         public void run()
         {
-            throw new NotImplementedException();
+            //erstellt zwei Offer-Objekte vor der Dateneingabe
+            OfferSchema newOffer1 = new OfferSchema();
+            OfferSchema newOffer2 = new OfferSchema();
+
+            //Dateneingabe für die beiden Offer-Objekte
+            System.Console.WriteLine("Eingabe Angebot 1\n");
+            newOffer1 = this.dataInputService.dataInput();
+            System.Console.WriteLine("Eingabe Angebot 2\n");
+            newOffer2 = this.dataInputService.dataInput();
+            
+            //Berechnung der fehlenden Kostenstellen
+            newOffer1 = this.calculationService.calcOffer(newOffer1);
+            newOffer2 = this.calculationService.calcOffer(newOffer2);
+
+            //Hinzufügen der Offer zum OfferManager
+            this.offerManager.addOffer(newOffer1);
+            this.offerManager.addOffer(newOffer2);
+
+            //Ausgabe günstigstes Angebot
+            this.gUIService.showBestOffers(this.offerManager.getBestOffers());
+
+            //Ausgabe der Angebote
+            this.gUIService.showOffers(this.offerManager.getAllOffers());
         }
     }
 }
