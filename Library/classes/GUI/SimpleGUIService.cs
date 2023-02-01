@@ -65,6 +65,11 @@ namespace Library.classes.GUI
                 }
         }
 
+        public void showOffers(List<OfferSchema> offer)
+        {
+            throw new NotImplementedException();
+        }
+
         public void wrongFormat()
         {
             throw new NotImplementedException();

@@ -124,5 +124,10 @@ namespace Library.classes.GUI
         {
             System.Console.WriteLine("Ungültige Eingabe\n");
         }
+
+        public void showOffers(List<OfferSchema> offer)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
