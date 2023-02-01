@@ -29,7 +29,14 @@ namespace Library.classes.Offer
         }
 
         public List<OfferSchema> getBestOffers()
-        {
+        {   
+            if(this.offers[0].referencePrice < this.offers[1].referencePrice){
+                this.bestOffers.Add(this.offers[0]);
+            }
+
+            if(this.offers[0].referencePrice > this.offers[1].referencePrice){
+                this.bestOffers.Add(this.offers[1]);
+            }
             return this.bestOffers;
         }
 
