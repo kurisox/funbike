@@ -67,7 +67,17 @@ namespace Library.classes.GUI
 
         public void showOffers(List<OfferSchema> offer)
         {
-            throw new NotImplementedException();
+            foreach (OfferSchema item in offer)
+            {
+                System.Console.WriteLine("  Angebot ID: " + item.offerID);
+                    System.Console.WriteLine("  Listeneinkaufspreis: " + item.listPrice + "€");
+                    System.Console.WriteLine("- Lieferrabatt: " + item.deliveryDiscount + "% " + item.deliveryDiscountInEuro + "€");
+                    System.Console.WriteLine("= Zieleinkaufspreis: " + item.targetPurchasePrice + "€");
+                    System.Console.WriteLine("- Lieferskonto: " + item.deliverySkonto + "% " + item.deliverySkontoInEuro + "€");
+                    System.Console.WriteLine("= Bareinkaufspreis: " + item.cashPurchasePrice + "€");
+                    System.Console.WriteLine("+ Bezugskosten: " + item.referenceCosts + "€");
+                    System.Console.WriteLine("= Bezugspreis: " + item.referencePrice + "€\n");
+            }
         }
 
         public void wrongFormat()
