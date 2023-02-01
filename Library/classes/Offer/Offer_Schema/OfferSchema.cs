@@ -13,6 +13,7 @@ namespace Library.classes.Offer
         public double referenceCosts { get; set; }
         public double referencePrice { get; set; }
 
+        public OfferSchema(){}
         public OfferSchema(int offerID, double listPrice, double deliveryDiscount, double deliverySkonto, double referenceCosts)
         {
             this.offerID = offerID;
