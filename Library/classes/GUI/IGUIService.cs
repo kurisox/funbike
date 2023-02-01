@@ -22,6 +22,8 @@ namespace Library.classes.GUI
 
         void showOffers(Dictionary<Int32, OfferSchema> offers);
 
+        void showOffers(List<OfferSchema> offer);
+
         void showBestOffers(List<OfferSchema> offers);
     }
 }
