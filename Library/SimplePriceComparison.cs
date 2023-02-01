@@ -45,7 +45,7 @@ namespace Library
             this.gUIService.showBestOffers(this.offerManager.getBestOffers());
 
             //Ausgabe der Angebote
-            this.gUIService.showOffers(this.offerManager.getAllOffers());
+            this.gUIService.showOffers(this.offerManager.getAllOffersAsList());
         }
     }
 }
