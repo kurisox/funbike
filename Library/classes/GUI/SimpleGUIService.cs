@@ -65,7 +65,7 @@ namespace Library.classes.GUI
                 }
         }
 
-        public void showOffers(List<OfferSchema> offer)
+        public void showOffers(List<OfferSchema> offer, double referencePriceLimit)
         {
             foreach (OfferSchema item in offer)
             {
@@ -77,6 +77,11 @@ namespace Library.classes.GUI
                     System.Console.WriteLine("= Bareinkaufspreis: " + item.cashPurchasePrice + "€");
                     System.Console.WriteLine("+ Bezugskosten: " + item.referenceCosts + "€");
                     System.Console.WriteLine("= Bezugspreis: " + item.referencePrice + "€\n");
+                    if(item.referencePrice < referencePriceLimit){
+                        System.Console.WriteLine("Bezugspreis im gesetzen Limit\n");
+                    }else{
+                        System.Console.WriteLine("Bezugspreis überschreitet gesetztes Limit\n");
+                    }
             }
         }
 

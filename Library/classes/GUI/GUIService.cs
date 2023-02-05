@@ -129,5 +129,10 @@ namespace Library.classes.GUI
         {
             throw new NotImplementedException();
         }
+
+        public void showOffers(List<OfferSchema> offer, double referencePriceLimit)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
