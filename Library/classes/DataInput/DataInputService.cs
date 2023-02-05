@@ -63,5 +63,22 @@ namespace Library.classes.DataInput
             return percentValue;
         
         }
+
+        public double listPriceLimit(){
+            double listPriceLimit = 0;
+            bool inputFinished = false;
+            do{
+                try{
+                    listPriceLimit = Convert.ToDouble(System.Console.ReadLine());
+                    inputFinished = true;
+                }catch(IndexOutOfRangeException ex){
+                    System.Console.WriteLine(ex.Message + "\n");
+                }catch(FormatException){
+                    System.Console.WriteLine("Ungültige Eingabe\n");
+                }
+            }while(!inputFinished);
+
+            return listPriceLimit;
+        }
     }
 }
