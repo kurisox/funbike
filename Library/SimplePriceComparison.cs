@@ -13,6 +13,8 @@ namespace Library
         private ICalculationService calculationService;
         private IGUIService gUIService;
 
+        private double referencePriceLimit;
+
         public SimplePriceComparison(IOfferManager offerManager, IDataInputService dataInputService, ICalculationService calculationService, IGUIService gUIService){
             this.offerManager = offerManager;
             this.dataInputService = dataInputService;
@@ -28,6 +30,9 @@ namespace Library
             OfferSchema newOffer2 = new OfferSchema();
 
             //Dateneingabe für die beiden Offer-Objekte
+            System.Console.WriteLine("Eingabe Bezugspreislimit");
+            this.referencePriceLimit = this.dataInputService.listPriceLimit();
+
             System.Console.WriteLine("Eingabe Angebot 1\n");
             newOffer1 = this.dataInputService.dataInput();
             System.Console.WriteLine("Eingabe Angebot 2\n");
@@ -45,7 +50,7 @@ namespace Library
             this.gUIService.showBestOffers(this.offerManager.getBestOffers());
 
             //Ausgabe der Angebote
-            this.gUIService.showOffers(this.offerManager.getAllOffersAsList());
+            this.gUIService.showOffers(this.offerManager.getAllOffersAsList(), this.referencePriceLimit);
         }
     }
 }
