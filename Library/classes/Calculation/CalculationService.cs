@@ -14,6 +14,11 @@ namespace Library.classes.Calculation
             return offer;
         }
 
+        public double calcWithCustomerDiscount(OfferSchema offer, double discount)
+        {
+            return offer.referencePrice - calcDiscountsInEuro(offer.referencePrice, discount);
+        }
+
         private double calcDiscountsInEuro(double price, double discount){
             return price * (discount / 100);
         }
