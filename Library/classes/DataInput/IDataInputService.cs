@@ -7,5 +7,7 @@ namespace Library.classes.DataInput
         OfferSchema dataInput();
 
         double listPriceLimit();
+
+        int customerCategory();
     }
 }
