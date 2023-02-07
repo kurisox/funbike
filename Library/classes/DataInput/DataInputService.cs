@@ -80,5 +80,24 @@ namespace Library.classes.DataInput
 
             return listPriceLimit;
         }
+
+        public int customerCategory()
+        {
+            int customerCategory = 0;
+            bool inputFinished = false;
+            do{
+                try
+                {
+                    customerCategory = Convert.ToInt32(System.Console.ReadLine());
+                    inputFinished = true;
+                }
+                catch (FormatException)
+                {
+                    System.Console.WriteLine("Ungültige Eingabe\n");
+                }
+            }while(!inputFinished);
+
+            return customerCategory;
+        }
     }
 }
