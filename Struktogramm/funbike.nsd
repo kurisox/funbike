@@ -1,11 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <root xmlns:nsd="https://structorizer.fisch.lu" version="3.32-11" preRepeat="until " postFor="to" preReturn="return" postForIn="in" preWhile="while " output="OUTPUT" input="INPUT" preFor="for" preExit="exit" preLeave="leave" ignoreCase="true" preThrow="throw" preForIn="foreach" stepFor="by" author="capsius" created="2023-01-31" changedby="capsius" changed="2023-02-14" origin="Structorizer 3.32-11" text="&#34;funbike&#34;" comment="" color="ffffff" type="program" style="nice">
 	<children>
-		<instruction text="&#34;Variablendeklaration&#34;,&#34;referencePriceLimit&#34;,&#34;listPrice1, deliveryDisount1, deliveryDisountInEuro1, targetPurchasePrice1, deliverySkonto1, deliverySkontoInEuro1, cashPrice1, referenceCosts1, referencePrice1&#34;,&#34;listPrice2, deliveryDisount2, deliveryDisountInEuro2, targetPurchasePrice2, deliverySkonto2, deliverySkontoInEuro2, cashPrice2, referenceCosts2, referencePrice2&#34;" comment="" color="ffffff" rotated="0" disabled="0"></instruction>
-		<instruction text="&#34;Eingabe:&#34;,&#34;referencePriceLimit&#34;,&#34;customerDiscount&#34;,&#34;listPrice1, deliveryDiscount1, deliverySkonto1, referenceCosts1&#34;,&#34;listPrice2, deliveryDiscount2, deliverySkonto2, referenceCosts2&#34;" comment="&#34;&#34;" color="ffffff" rotated="0" disabled="0"></instruction>
+		<instruction text="&#34;Variablendeklaration&#34;,&#34;referencePriceLimit&#34;,&#34;customerClassDiscount&#34;,&#34;customerClass&#34;,&#34;listPrice1, deliveryDisount1, deliveryDisountInEuro1, targetPurchasePrice1, deliverySkonto1, deliverySkontoInEuro1, cashPrice1, referenceCosts1, referencePrice1&#34;,&#34;listPrice2, deliveryDisount2, deliveryDisountInEuro2, targetPurchasePrice2, deliverySkonto2, deliverySkontoInEuro2, cashPrice2, referenceCosts2, referencePrice2&#34;" comment="&#34;&#34;" color="ffffff" rotated="0" disabled="0"></instruction>
+		<instruction text="&#34;Eingabe:&#34;,&#34;customerClass&#34;,&#34;referencePriceLimit&#34;,&#34;listPrice1, deliveryDiscount1, deliverySkonto1, referenceCosts1&#34;,&#34;listPrice2, deliveryDiscount2, deliverySkonto2, referenceCosts2&#34;" comment="&#34;&#34;" color="ffffff" rotated="0" disabled="0"></instruction>
 		<alternative text="&#34;Eingabe numerisch?&#34;" comment="" color="ffffff" disabled="0">
 			<qTrue>
-				<instruction text="&#34;Verarbeitung:&#34;,&#34;deliveryDiscountInEuro1 = listPrice1 * (deliveryDiscount1/100)&#34;,&#34;targetPurchasePrice1 = listPrice1 - deliveryDiscountInEuro1&#34;,&#34;deliverySkontoInEuro1 = targetPurchasePrice1 * (deliverySkonto1/100)&#34;,&#34;cashPrice1 = targetPurchasePrice1 - deliverySkontoInEuro1&#34;,&#34;referencePrice1 = cashPrice1 - referenceCosts1&#34;,&#34;referencePrice1 = referencePrice1 - (referencePrice1 * customerDiscount)&#34;,&#34;&#34;,&#34;deliveryDiscountInEuro2 = listPrice2 * (deliveryDiscount2/100)&#34;,&#34;targetPurchasePrice2 = listPrice2 - deliveryDiscountInEuro2&#34;,&#34;deliverySkontoInEuro2 = targetPurchasePrice2 * (deliverySkonto2/100)&#34;,&#34;cashPrice2 = targetPurchasePrice2 - deliverySkontoInEuro2&#34;,&#34;referencePrice2 = cashPrice2 - referenceCosts2&#34;,&#34;referencePrice2 = referencePrice2 - (referencePrice2 * customerDiscount)&#34;" comment="&#34;&#34;" color="ffffff" rotated="0" disabled="0"></instruction>
+				<instruction text="&#34;Verarbeitung:&#34;,&#34;deliveryDiscountInEuro1 = listPrice1 * (deliveryDiscount1/100)&#34;,&#34;targetPurchasePrice1 = listPrice1 - deliveryDiscountInEuro1&#34;,&#34;deliverySkontoInEuro1 = targetPurchasePrice1 * (deliverySkonto1/100)&#34;,&#34;cashPrice1 = targetPurchasePrice1 - deliverySkontoInEuro1&#34;,&#34;referencePrice1 = cashPrice1 - referenceCosts1&#34;,&#34;referencePrice1 = referencePrice1 - (referencePrice1 * customerDiscount)&#34;,&#34;&#34;,&#34;deliveryDiscountInEuro2 = listPrice2 * (deliveryDiscount2/100)&#34;,&#34;targetPurchasePrice2 = listPrice2 - deliveryDiscountInEuro2&#34;,&#34;deliverySkontoInEuro2 = targetPurchasePrice2 * (deliverySkonto2/100)&#34;,&#34;cashPrice2 = targetPurchasePrice2 - deliverySkontoInEuro2&#34;,&#34;referencePrice2 = cashPrice2 - referenceCosts2&#34;,&#34;referencePrice2 = referencePrice2 - (referencePrice2 * customerDiscount)&#34;" comment="" color="ffffff" rotated="0" disabled="0"></instruction>
+				<alternative text="&#34;referencePriceLimit &#60; referencePrice1&#34;" comment="" color="ffffff" disabled="0">
+					<qTrue>
+						<instruction text="&#34;referencePriceLimit überschritten&#34;" comment="" color="ffffff" rotated="0" disabled="0"></instruction>
+					</qTrue>
+					<qFalse>
+						<instruction text="&#34;referencePrice1 liegt im Limit&#34;" comment="" color="ffffff" rotated="0" disabled="0"></instruction>
+					</qFalse>
+				</alternative>
+				<alternative text="&#34;referencePriceLimit &#60; referencePrice2&#34;" comment="" color="ffffff" disabled="0">
+					<qTrue>
+						<instruction text="&#34;referencePriceLimit überschritten&#34;" comment="" color="ffffff" rotated="0" disabled="0"></instruction>
+					</qTrue>
+					<qFalse>
+						<instruction text="&#34;referencePrice2 liegt im Limit&#34;" comment="" color="ffffff" rotated="0" disabled="0"></instruction>
+					</qFalse>
+				</alternative>
 				<alternative text="&#34;referencePrice1 &#60; referencePrice2&#34;" comment="" color="ffffff" disabled="0">
 					<qTrue>
 						<instruction text="&#34;referencePrice1 markieren&#34;" comment="" color="ffffff" rotated="0" disabled="0"></instruction>
@@ -21,23 +37,7 @@
 					</qFalse>
 				</alternative>
 				<instruction text="&#34;Ausgabe:&#34;,&#34;listPrice1, deliveryDisount1, deliveryDisountInEuro1, targetPurchasePrice1, deliverySkonto1, deliverySkontoInEuro1, cashPrice1, referenceCosts1, referencePrice1&#34;" comment="" color="ffffff" rotated="0" disabled="0"></instruction>
-				<alternative text="&#34;referencePriceLimit &#60; referencePrice1&#34;" comment="" color="ffffff" disabled="0">
-					<qTrue>
-						<instruction text="&#34;referencePriceLimit überschritten&#34;" comment="" color="ffffff" rotated="0" disabled="0"></instruction>
-					</qTrue>
-					<qFalse>
-						<instruction text="&#34;referencePrice1 liegt im Limit&#34;" comment="" color="ffffff" rotated="0" disabled="0"></instruction>
-					</qFalse>
-				</alternative>
 				<instruction text="&#34;listPrice2, deliveryDisount2, deliveryDisountInEuro2, targetPurchasePrice2, deliverySkonto2, deliverySkontoInEuro2, cashPrice2, referenceCosts2, referencePrice2&#34;" comment="" color="ffffff" rotated="0" disabled="0"></instruction>
-				<alternative text="&#34;referencePriceLimit &#60; referencePrice2&#34;" comment="" color="ffffff" disabled="0">
-					<qTrue>
-						<instruction text="&#34;referencePriceLimit überschritten&#34;" comment="" color="ffffff" rotated="0" disabled="0"></instruction>
-					</qTrue>
-					<qFalse>
-						<instruction text="&#34;referencePrice2 liegt im Limit&#34;" comment="" color="ffffff" rotated="0" disabled="0"></instruction>
-					</qFalse>
-				</alternative>
 			</qTrue>
 			<qFalse>
 				<instruction text="&#34;Ausgabe:&#34;,&#34;Fehler&#34;" comment="" color="ffffff" rotated="0" disabled="0"></instruction>
